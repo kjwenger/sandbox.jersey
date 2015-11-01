@@ -13,8 +13,9 @@ import org.junit.Test;
 import com.u14n.sandbox.jersey.Main;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-public class MyResourceTest {
+public class LocationsResourceTest {
 
     private HttpServer server;
     private WebTarget target;
@@ -45,7 +46,7 @@ public class MyResourceTest {
      */
     @Test
     public void testGetIt() {
-        String responseMsg = target.path("myresource").request().get(String.class);
-        assertEquals("Got it!", responseMsg);
+        String responseMsg = target.path("locations").request().get(String.class);
+        assertNotNull(responseMsg);
     }
 }
